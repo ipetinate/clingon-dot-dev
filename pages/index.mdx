@@ -1,16 +1,72 @@
-export default function Home() {
-  return (
-    <div className="flex flex-row justify-start items-start content-start w-full h-screen p-10 gap-2">
-      <div className="flex flex-col justify-start items-start content-start w-full min-w-[60%] h-screen p-10 gap-2">
-          <h2 className="text-5xl text-rose-700">Welcome to Clingon</h2>
+import { Card } from '../components/Card'
+import { Bleed } from 'nextra-theme-docs'
+import { Callout } from 'nextra/components'
 
-          <p className="text-xl">The best tool for your daily software development</p>
+<div className="w-full flex flex-col justify-center items-center content-center">
+  <img src="/logo.svg" className="w-80 h-80" />
+</div>
+
+<div className="w-full flex flex-col justify-center items-center content-center">
+    <p className="text-xl">The best tool for your daily software development</p>
+
+    ```shell
+    npx clingon@latest gen
+    ```
+
+</div>
+
+<div className="w-full max-w-72 m-auto flex flex-col justify-center items-center content-center">
+  <Callout type="warning" emoji="⚠️">
+    Beta - Under development
+  </Callout>
+</div>
+
+<Bleed>
+  <div className="w-full flex flex-row justify-center items-center content-center gap-10 p-10">
+    <Card>
+      <div className='flex flex-col gap-5 w-80 h-40'>
+        <div className='flex flex-row gap-2'>
+          <span className='text-xl'>🧑‍💻</span>
+
+          <h3 className='text-xl text-emerald-400 font-semibold'>Developer Experience</h3>
+        </div>
+
+        <p className='max-w-96 text-sm'>
+          Use ready-made templates instead of copying and pasting code until you have something minimally viable to develop, avoid tedious and repetitive tasks
+        </p>
       </div>
 
-      <div className="flex flex-col justify-start items-start content-start w-full min-w-[40%] h-screen p-10 gap-2">
-        <code className="bg-slate-500 rounded-lg p-3">npx clingon@latest gen</code>
-      </div>
-    </div>
+    </Card>
 
-)
-}
+    <Card>
+      <div className='flex flex-col gap-5 w-80 h-40'>
+        <div className='flex flex-row gap-2'>
+          <span className='text-xl'>⌚️</span>
+
+          <h3 className='text-xl text-emerald-400 font-semibold'>Time Saving</h3>
+        </div>
+
+        <p className='max-w-96 text-sm'>
+          Creating too many files? Component, styles, tests, stories, index, among others. Save time by automatically creating files with as little programming as necessary.
+        </p>
+      </div>
+
+    </Card>
+
+    <Card>
+      <div className='flex flex-col gap-5 w-80 h-40'>
+        <div className='flex flex-row gap-2'>
+          <span className='text-lg'>🤩</span>
+
+          <h3 className='text-lg text-emerald-400 font-semibold'>Avoid Mistakes</h3>
+        </div>
+
+        <p className='max-w-96 text-sm'>
+          Using pre-filled templates, you avoid syntax errors or problems when copying code from other places, change what is necessary and develop what is missing
+        </p>
+      </div>
+
+    </Card>
+
+  </div>
+</Bleed>

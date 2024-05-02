@@ -1,4 +1,4 @@
-import { render, screen } from '../tests'
+import { render, screen } from '../test'
 import { describe, it, expect } from 'vitest'
 
 import { AppLogo } from './AppLogo'
