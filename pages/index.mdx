@@ -1,10 +1,16 @@
-<div className="flex flex-col justify-center items-center content-center p-10 gap-10">
-    <h2 className="text-5xl text-rose-700">Welcome to Clingon</h2>
+export default function Home() {
+  return (
+    <div className="flex flex-row justify-start items-start content-start w-full h-screen p-10 gap-2">
+      <div className="flex flex-col justify-start items-start content-start w-full min-w-[60%] h-screen p-10 gap-2">
+          <h2 className="text-5xl text-rose-700">Welcome to Clingon</h2>
 
-    <h3 className="text-xl">The best tool for your daily software development</h3>
+          <p className="text-xl">The best tool for your daily software development</p>
+      </div>
 
-    <code className="bg-slate-500 rounded-lg p-3">
-        npx clingon@latest gen
-    </code>
+      <div className="flex flex-col justify-start items-start content-start w-full min-w-[40%] h-screen p-10 gap-2">
+        <code className="bg-slate-500 rounded-lg p-3">npx clingon@latest gen</code>
+      </div>
+    </div>
 
-</div>
+)
+}

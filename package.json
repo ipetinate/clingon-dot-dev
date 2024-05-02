@@ -1,22 +1,24 @@
 {
-  "name": "nextra-docs-template",
+  "name": "clingon-dot-dev",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "Clingon CLI official website + docs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/ipetinate/clingon-dot-dev.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Isac Petinate <idpetinate@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/ipetinate/clingon-dot-dev/issues"
   },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
+  "homepage": "https://github.com/ipetinate/clingon-dot-dev#readme",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",
@@ -25,10 +27,16 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^15.0.6",
     "@types/node": "18.11.10",
+    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
+    "happy-dom": "^14.7.1",
+    "jsdom": "^24.0.0",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "vitest": "^1.5.3"
   }
 }

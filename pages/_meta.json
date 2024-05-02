@@ -2,14 +2,23 @@
   "index": {
     "title": "Home",
     "type": "page",
-    "href": "/"
+    "href": "/",
+    "theme": {
+      "timestamp": false
+    }
   },
   "docs": {
     "title": "Documentation",
-    "type": "page"
+    "type": "page",
+    "theme": {
+      "timestamp": false
+    }
   },
   "about": {
     "title": "About",
-    "type": "page"
+    "type": "page",
+    "theme": {
+      "timestamp": false
+    }
   }
 }

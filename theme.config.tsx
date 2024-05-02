@@ -1,16 +1,17 @@
 import React from 'react'
 
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import { AppLogo } from './components/AppLogo'
 
 const config: DocsThemeConfig = {
-  logo: <span>Clingon</span>,
+  logo: <AppLogo height={56} width={56} />,
   project: {
     link: 'https://github.com/ipetinate/clingon'
   },
   chat: {},
   docsRepositoryBase: 'https://github.com/ipetinate/clingon',
   footer: {
-    text: 'Clingon'
+    text: `${new Date().getFullYear()} © Clingon.`
   }
 }
 

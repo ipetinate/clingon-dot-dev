@@ -1,7 +1,8 @@
 const withNextra = require('nextra')({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
-  standalone: true
+  standalone: true,
+  timestamp: false
 })
 
-module.exports = withNextra({})
+module.exports = withNextra()

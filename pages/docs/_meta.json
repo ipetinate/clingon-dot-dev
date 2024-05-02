@@ -1,5 +1,10 @@
 {
-  "index": "Introduction",
+  "index": {
+    "title": "Introduction",
+    "theme": {
+      "timestamp": false
+    }
+  },
   "guide": {
     "title": "Guide"
   }
