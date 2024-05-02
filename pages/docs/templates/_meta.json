@@ -5,14 +5,14 @@
       "timestamp": false
     }
   },
-  "guide": {
-    "title": "Guide",
+  "javascript": {
+    "title": "JavaScript",
     "theme": {
       "timestamp": false
     }
   },
-  "templates": {
-    "title": "Templates",
+  "typescript": {
+    "title": "TypeScript",
     "theme": {
       "timestamp": false
     }

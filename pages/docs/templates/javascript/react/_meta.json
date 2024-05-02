@@ -1,0 +1,7 @@
+{
+  "component": "Component",
+  "page": "Page",
+  "storybook": "Storybook",
+  "style": "Style",
+  "unit-test": "Unit Test"
+}
