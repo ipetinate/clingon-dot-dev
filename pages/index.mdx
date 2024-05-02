@@ -2,6 +2,8 @@ import { Card } from '../components/Card'
 import { Bleed } from 'nextra-theme-docs'
 import { Callout } from 'nextra/components'
 
+import Link from 'next/link'
+
 <div className="w-full flex flex-col justify-center items-center content-center">
   <img src="/logo.svg" className="w-80 h-80" />
 </div>
@@ -21,8 +23,14 @@ import { Callout } from 'nextra/components'
   </Callout>
 </div>
 
+<div className="w-full max-w-72 mx-auto my-5 flex flex-col justify-center items-center content-center">
+  <Link className="underline text-purple-500" href="/docs">
+    👉 Go to documentation
+  </Link>
+</div>
+
 <Bleed>
-  <div className="w-full flex flex-row justify-center items-center content-center gap-10 p-10">
+  <div className="w-full flex flex-col xl:flex-row xs:flex-col justify-center items-center content-center gap-10 p-10">
     <Card>
       <div className='flex flex-col gap-5 w-80 h-40'>
         <div className='flex flex-row gap-2'>
