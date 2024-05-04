@@ -16,5 +16,11 @@
     "theme": {
       "timestamp": false
     }
+  },
+  "presets": {
+    "title": "Presets",
+    "theme": {
+      "timestamp": false
+    }
   }
 }
