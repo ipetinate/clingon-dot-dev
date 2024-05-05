@@ -1,0 +1,25 @@
+import { VideoPlayer } from '../../components/VideoPlayer'
+
+# Arguments
+
+Arguments are used with the main command to take shortcuts in some responses, we intend to allow several arguments and options so that you can compose the file generation command, but at the moment, we only have the arguments/options below:
+
+## `name`
+
+> Available on version 0.8.1 and above
+
+The `name` argument is optional, you can use it after the 'gen`command, and it receives the name of the resource to be used, if you pass the`name` argument it will not ask you in the creation flow, it will skip the name question.
+
+### How to use
+
+Add the resource name after the `gen` command, as a regular string in PascalCase or another case (it will be converted automatically), just avoid spaces.
+
+```shell
+npx clingon gen <ResourceName>
+```
+
+### Preview
+
+Preview using the `name` argument when calling the command
+
+<VideoPlayer src="/videos/command-with-name-argument.webm" />
