@@ -22,5 +22,11 @@
     "theme": {
       "timestamp": false
     }
+  },
+  "arguments": {
+    "title": "Arguments",
+    "theme": {
+      "timestamp": false
+    }
   }
 }
