@@ -8,43 +8,43 @@ Understand better how to compose a command using the Clingon API.
 
 First you need to call the tool, if you have installed it globally, you can call it using the word `clingon` if you prefer not to install it globally, use npx as follows `npx clingon`.
 
-    ```shell
-    clingon
+```shell
+clingon
 
-    # or
+# or
 
-    npx clingon
-    ```
+npx clingon
+```
 
 Next, you will have to pass a command, it can be `gen` or `create` (but remember: each one behaves in a different way, see more below in this same documentation). Then:
 
-    ```shell
-    clingon gen
+```shell
+clingon gen
 
-    # or
+# or
 
-    npx clingon gen
-    ```
+npx clingon gen
+```
 
 You can add an argument to the command:
 
-    ```shell
-    clingon gen MyResourceName
+```shell
+clingon gen MyResourceName
 
-    # or
+# or
 
-    npx clingon MyResourceName
-    ```
+npx clingon MyResourceName
+```
 
 And if the command accepts options, you compose it by passing the options with `--OPTION-NAME`, let's use the `create` command as an example:
 
-    ```shell
-    clingon gen MyResourceName --preset react-with-test
+```shell
+clingon gen MyResourceName --preset react-with-test
 
-    # or
+# or
 
-    npx clingon MyResourceName --preset react-with-test
-    ```
+npx clingon MyResourceName --preset react-with-test
+```
 
     - `--preset`: indicates the `preset` option that takes as its value the name of the preset that you have locally, in this example the name of the preset is `react-with-test` which is a json file saved in the ` folder .clingon/presets` inside your project.
 
@@ -105,9 +105,9 @@ See more below, and check out the examples in the sections below:
 | `--type <resourceType>`                | Type of the resource; can be "function", "page", or "component".                                    |                                                                                  | Yes                                                   |
 | `--vue-version [vueVersion]`           | Vue version; can be "2" or "3".                                                                     | `3`                                                                              | Yes only for vue as a framework, not for other cases. |
 | `--path <resourcePath>`                | Path to the resource; use dot (`"."`) for the current directory.                                    |                                                                                  | Yes                                                   |
-| `--testPath [testPath]`                | Path to the test file; uses the same directory as the resource if omitted and `--spec` is present.  | If it is omitted, and has `--test` or `--spec` it will use the value of `--path` | No                                                    |
-| `--storyPath [storyPath]`              | Path to the story file; uses the same directory as the resource if omitted and `--spec` is present. | If it is omitted, and has `--story` it will use the value of `--path`            | No                                                    |
-| `--cssFramework [cssFramework]`        | Style approach; can be "css_modules", "tailwind_inline", "tailwind_file", "css_vanilla", or "scss". | `no_style`                                                                       | No                                                    |
+| `--test-path [testPath]`               | Path to the test file; uses the same directory as the resource if omitted and `--spec` is present.  | If it is omitted, and has `--test` or `--spec` it will use the value of `--path` | No                                                    |
+| `--story-path [storyPath]`             | Path to the story file; uses the same directory as the resource if omitted and `--spec` is present. | If it is omitted, and has `--story` it will use the value of `--path`            | No                                                    |
+| `--css-framework [cssFramework]`       | Style approach; can be "css_modules", "tailwind_inline", "tailwind_file", "css_vanilla", or "scss". | `no_style`                                                                       | No                                                    |
 | `--test-framework [testFrameworkName]` | Test framework; can be "jest" or "vitest".                                                          | `jest`                                                                           | No                                                    |
 | `--typescript`                         | Enables TypeScript support.                                                                         | `false` (uses JS instead)                                                        | No                                                    |
 | `--testing-library`                    | Includes Testing Library support.                                                                   | `false` (uses the default for framework)                                         | No                                                    |
@@ -145,11 +145,11 @@ npx clingon create ResourceName --preset myPreset --test --typescript --folder-w
 - To create a Vue component with a story file and a CSS framework:
 
 ```shell
-clingon create ResourceName --framework vue --story --cssFramework css_modules
+clingon create ResourceName --framework vue --story --css-framework css_modules
 
 # or
 
-npx clingon create ResourceName --framework vue --story --cssFramework css_modules
+npx clingon create ResourceName --framework vue --story --css-framework css_modules
 ```
 
 - To create a resource with a specific framework and type, like a React component:
@@ -161,3 +161,29 @@ clingon create ResourceName --framework react --type component
 
 npx clingon create ResourceName --framework react --type component
 ```
+
+#### Use as npm script
+
+You can create shortcuts using NPM scripts to execute clingon commands, if you don't want to use presets, or if you want to share commands with your team.
+
+- Create React component with Tests, Story, Vitest, CSS Vanilla and wrapper folder
+
+  - Scripts
+    ```json
+    {
+      "scripts": {
+        "create:react": "clingon create --type component --framework react --css-framework css_modules --spec --story --path src/components"
+      }
+    }
+    ```
+  - Execution
+
+        ```shell
+        npm run create:react ResourceName
+
+        # or
+
+        yarn create:react ResourceName
+        ```
+
+        <img src="/images/with-npm-scripts.png" alt="Create with NPM Scripts" className="rounded-xl pointer-events-none" />
