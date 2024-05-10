@@ -1,3 +1,5 @@
+import { FileTree } from 'nextra/components'
+
 # Presets
 
 In version `0.8.0` the presets feature was added, to save your prompt responses locally, and then quickly use a ready-made set to create your resources.
@@ -46,6 +48,7 @@ interface Answers {
   withStory: boolean
   withTest: boolean
   withTestingLibrary: boolean
+  folderWrapper: boolean
 }
 ```
 
@@ -84,3 +87,47 @@ interface Answers {
 - Folder with presets and preset json content
 
 <img src="/images/preset-folder-file.png" />
+
+### Create your own preset
+
+To create your own preset files, you need to follow the interface above, filling in a JSON file, with the name of the preset. See below:
+
+1. Create a `.clingon` folder, then a `preset` folder inside.
+
+   <FileTree>
+     <FileTree.Folder name=".clingon" defaultOpen>
+       <FileTree.Folder name="presets" defaultOpen></FileTree.Folder>
+     </FileTree.Folder>
+   </FileTree>
+
+2. Create a file with preset name, like `react-with-tests.json`
+
+   <FileTree>
+     <FileTree.Folder name=".clingon" defaultOpen>
+       <FileTree.Folder name="presets" defaultOpen>
+         <FileTree.File name="react-with-tests.json" />
+       </FileTree.Folder>
+     </FileTree.Folder>
+   </FileTree>
+
+3. Add a valid json based on preset interface:
+
+   ```json showLineNumbers filename="react-with-tests.json"
+   {
+     "type": "component",
+     "framework": "react",
+     "cssFramework": "css_vanilla",
+     "testFramework": "vitest",
+     "resourcePath": "src/components",
+     "testPath": "src/components",
+     "storyPath": null,
+     "version": null,
+     "testPostfix": "spec",
+     "storyPostfix": "stories",
+     "typescript": true,
+     "withStory": false,
+     "withTest": true,
+     "withTestingLibrary": true,
+     "folderWrapper": true
+   }
+   ```
