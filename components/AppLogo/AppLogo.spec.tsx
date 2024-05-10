@@ -1,8 +1,9 @@
-import { render, screen } from '../test'
+import { render, screen } from '../../test'
 import { describe, it, expect } from 'vitest'
 
+import { logoAlt } from '../../constants/alternative-texts'
+
 import { AppLogo } from './AppLogo'
-import { logoAlt } from '../constants/alternative-texts'
 
 describe('GradientText', () => {
   it('renders app logo with image and name', () => {

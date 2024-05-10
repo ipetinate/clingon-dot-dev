@@ -1,4 +1,4 @@
-import { logoAlt } from '../constants/alternative-texts'
+import { logoAlt } from '../../constants/alternative-texts'
 
 export type AppLogoProps = {
   width?: number
