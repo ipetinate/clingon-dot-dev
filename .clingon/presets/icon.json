@@ -1,0 +1,17 @@
+{
+  "framework": "react",
+  "cssFramework": "tailwind_inline",
+  "testFramework": "vitest",
+  "version": null,
+  "resourcePath": "icons",
+  "testPath": "icons",
+  "storyPath": null,
+  "testPostfix": "spec",
+  "storyPostfix": "stories",
+  "type": "component",
+  "typescript": true,
+  "withStory": false,
+  "withTest": true,
+  "withTestingLibrary": true,
+  "folderWrapper": true
+}

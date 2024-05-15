@@ -1,0 +1,28 @@
+{
+  "id": "dev.clingon",
+  "name": "Clingon CLI",
+  "short_name": "clingon",
+  "description": "Create resources for your project with just a few steps, components, pages, functions, and more",
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "en-US",
+  "scope": "/",
+  "start_url": "/",
+  "theme_color": "#8936FF",
+  "background_color": "#2EC6FE",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ]
+}

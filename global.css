@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.icon {
+  @apply w-6 h-6;
+}
+
+.icon.sm {
+  @apply w-4 h-4;
+}
+
+.icon.md {
+  @apply w-8 h-8;
+}
+
+.icon.lg {
+  @apply w-12 h-12;
+}
