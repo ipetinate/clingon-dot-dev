@@ -3,7 +3,6 @@
   "cssFramework": "tailwind_inline",
   "testFramework": "vitest",
   "version": null,
-  "name": "VideoPlayer",
   "resourcePath": "components",
   "testPath": "components",
   "storyPath": null,
@@ -13,5 +12,6 @@
   "typescript": true,
   "withStory": false,
   "withTest": true,
-  "withTestingLibrary": true
+  "withTestingLibrary": true,
+  "folderWrapper": true
 }

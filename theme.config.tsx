@@ -1,12 +1,16 @@
-import { AppLogo } from './components/AppLogo'
+import { AppLogo } from 'components/AppLogo'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import { DiscussionIcon } from 'icons'
 
 const config: DocsThemeConfig = {
   logo: <AppLogo height={56} width={56} />,
   project: {
     link: 'https://github.com/ipetinate/clingon'
   },
-  chat: {},
+  chat: {
+    link: 'https://github.com/ipetinate/clingon/discussions',
+    icon: <DiscussionIcon />
+  },
   head: (
     <>
       <link rel="shortcut icon" href="logo/favicon.ico" type="image/x-icon" />
