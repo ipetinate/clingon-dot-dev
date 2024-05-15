@@ -17,12 +17,12 @@ const config: DocsThemeConfig = {
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="Clingon CLI" />
-      <meta property="og:image" content="https://www.clingon.dev/logo.svg" />
+      <meta property="og:image" content="https://www.clingon.dev/icon512_maskable.png" />
       <meta
         property="og:description"
         content="Create resources for your project with just a few steps, components, pages, functions, and more"
       />
-      <meta property="image" content="https://www.clingon.dev/logo.svg" />
+      <meta property="image" content="https://www.clingon.dev/icon512_maskable.png" />
       <meta name="title" content="Clingon CLI" />
       <meta
         name="description"
