@@ -1,6 +1,7 @@
 import { AppLogo } from 'components/AppLogo'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { DiscussionIcon } from 'icons'
+import { useRouter } from 'next/router'
 
 const config: DocsThemeConfig = {
   logo: <AppLogo height={56} width={56} />,
@@ -13,7 +14,7 @@ const config: DocsThemeConfig = {
   },
   head: (
     <>
-      <link rel="shortcut icon" href="logo/favicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:title" content="Clingon CLI" />
       <meta name="title" content="Clingon CLI" />
@@ -41,8 +42,18 @@ const config: DocsThemeConfig = {
     text: `${new Date().getFullYear()} © Clingon.`
   },
   useNextSeoProps() {
-    return {
-      titleTemplate: '%s – Clingon'
+    const { asPath } = useRouter()
+
+    if (asPath === '/') {
+      return {
+        titleTemplate: 'Home - Clingon'
+      }
+    }
+
+    if (asPath !== '/') {
+      return {
+        titleTemplate: '%s – Clingon'
+      }
     }
   }
 }
