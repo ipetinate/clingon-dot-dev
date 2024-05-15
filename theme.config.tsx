@@ -35,6 +35,7 @@ const config: DocsThemeConfig = {
       <meta name="language" content="English" />
       <meta name="revisit-after" content="1 days" />
       <meta name="author" content="Isac Petinate" />
+      <meta property="og:image" content="https://www.clingon.dev/logo.svg" />
     </>
   ),
   docsRepositoryBase: 'https://github.com/ipetinate/clingon',
