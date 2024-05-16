@@ -4,4 +4,28 @@
         <loc>https://clingon.dev</loc>
         <lastmod>2024-16-05</lastmod>
     </url>
+    <url>
+        <loc>https://clingon.dev/docs</loc>
+        <lastmod>2024-16-05</lastmod>
+    </url>
+    <url>
+        <loc>https://clingon.dev/docs/arguments</loc>
+        <lastmod>2024-16-05</lastmod>
+    </url>
+    <url>
+        <loc>https://www.clingon.dev/docs/guide/installation</loc>
+        <lastmod>2024-16-05</lastmod>
+    </url>
+    <url>
+        <loc>https://www.clingon.dev/docs/guide/commands</loc>
+        <lastmod>2024-16-05</lastmod>
+    </url>
+    <url>
+        <loc>https://www.clingon.dev/docs/templates</loc>
+        <lastmod>2024-16-05</lastmod>
+    </url>
+    <url>
+        <loc>https://www.clingon.dev/docs/presets</loc>
+        <lastmod>2024-16-05</lastmod>
+    </url>
 </urlset>
