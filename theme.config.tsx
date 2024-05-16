@@ -15,6 +15,7 @@ const config: DocsThemeConfig = {
   head: (
     <>
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      <link rel="canonical" href="https://clingon.dev" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://clingon.dev" />
@@ -39,7 +40,7 @@ const config: DocsThemeConfig = {
       />
       <meta
         name="keywords"
-        content="generator, frontend, clingon, react, vue, developertools, devexp, developerexperience, clitool, toolgenerator, nodejs, vitest, testinglibrary"
+        content="generator, frontend, clingon, react, vue, developertools, devexp, developerexperience, clitool, toolgenerator, nodejs, vitest, testinglibrary, functions, more, components, pages, resources"
       />
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="robots" content="index, follow" />
