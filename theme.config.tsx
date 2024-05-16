@@ -3,6 +3,37 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 import { DiscussionIcon } from 'icons'
 import { useRouter } from 'next/router'
 
+const jsonLD = [
+  {
+    '@context': 'http://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Clingon',
+    image: 'https://www.clingon.dev/logo.svg',
+    url: 'https://www.clingon.dev/',
+    author: {
+      '@type': 'Person',
+      name: '2024 © Clingon.'
+    },
+    downloadUrl: '',
+    requirements:
+      'Use ready-made templates instead of copying and pasting code until you have something minimally viable to develop, avoid tedious and repetitive tasks'
+  },
+  {
+    '@context': 'http://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Clingon',
+    image: 'https://www.clingon.dev/logo.svg',
+    url: 'https://www.clingon.dev/docs',
+    author: {
+      '@type': 'Person',
+      name: '2024 © Clingon.'
+    },
+    downloadUrl: '',
+    requirements:
+      'Use ready-made templates instead of copying and pasting code until you have something minimally viable to develop, avoid tedious and repetitive tasks'
+  }
+]
+
 const config: DocsThemeConfig = {
   logo: <AppLogo height={56} width={56} />,
   project: {
@@ -47,6 +78,13 @@ const config: DocsThemeConfig = {
       <meta name="language" content="English" />
       <meta name="revisit-after" content="1 days" />
       <meta name="author" content="Isac Petinate" />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLD)
+        }}
+      />
     </>
   ),
   docsRepositoryBase: 'https://github.com/ipetinate/clingon',
