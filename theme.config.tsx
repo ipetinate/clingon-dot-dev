@@ -1,48 +1,24 @@
 import { AppLogo } from 'components/AppLogo'
 import { DocsThemeConfig } from 'nextra-theme-docs'
-import { DiscussionIcon } from 'icons'
 import { useRouter } from 'next/router'
 
-const jsonLD = [
-  {
-    '@context': 'http://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'Clingon',
-    image: 'https://www.clingon.dev/logo.svg',
-    url: 'https://www.clingon.dev/',
-    author: {
-      '@type': 'Person',
-      name: '2024 © Clingon.'
-    },
-    downloadUrl: '',
-    requirements:
-      'Use ready-made templates instead of copying and pasting code until you have something minimally viable to develop, avoid tedious and repetitive tasks'
-  },
-  {
-    '@context': 'http://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'Clingon',
-    image: 'https://www.clingon.dev/logo.svg',
-    url: 'https://www.clingon.dev/docs',
-    author: {
-      '@type': 'Person',
-      name: '2024 © Clingon.'
-    },
-    downloadUrl: '',
-    requirements:
-      'Use ready-made templates instead of copying and pasting code until you have something minimally viable to develop, avoid tedious and repetitive tasks'
+const jsonLD = {
+  '@context': 'http://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Clingon',
+  image: 'https://www.clingon.dev/logo.svg',
+  url: 'https://www.clingon.dev/',
+  author: {
+    '@type': 'Person',
+    name: 'Isac Petinate'
   }
-]
+}
 
 const config: DocsThemeConfig = {
   logo: <AppLogo height={56} width={56} />,
   project: {
     link: 'https://github.com/ipetinate/clingon'
   },
-  // chat: {
-  //   link: 'https://github.com/ipetinate/clingon/discussions',
-  //   icon: <DiscussionIcon />
-  // },
   head: (
     <>
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -89,7 +65,7 @@ const config: DocsThemeConfig = {
   ),
   docsRepositoryBase: 'https://github.com/ipetinate/clingon',
   footer: {
-    text: `${new Date().getFullYear()} © Clingon.`
+    text: `${new Date().getFullYear()} © Isac Petinate`
   },
   useNextSeoProps() {
     const { asPath } = useRouter()
