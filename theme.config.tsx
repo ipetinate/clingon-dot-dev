@@ -2,18 +2,6 @@ import { AppLogo } from 'components/AppLogo'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 
-const jsonLD = {
-  '@context': 'http://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'Clingon',
-  image: 'https://www.clingon.dev/logo.svg',
-  url: 'https://www.clingon.dev/',
-  author: {
-    '@type': 'Person',
-    name: 'Isac Petinate'
-  }
-}
-
 const config: DocsThemeConfig = {
   logo: <AppLogo height={56} width={56} />,
   project: {
@@ -54,13 +42,6 @@ const config: DocsThemeConfig = {
       <meta name="language" content="English" />
       <meta name="revisit-after" content="1 days" />
       <meta name="author" content="Isac Petinate" />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLD)
-        }}
-      />
     </>
   ),
   docsRepositoryBase: 'https://github.com/ipetinate/clingon',
