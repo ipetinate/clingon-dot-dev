@@ -13,5 +13,13 @@
     "theme": {
       "timestamp": false
     }
+  },
+  "about": {
+    "title": "About",
+    "type": "page",
+    "href": "/about",
+    "theme": {
+      "timestamp": false
+    }
   }
 }
