@@ -36,11 +36,11 @@ const config: DocsThemeConfig = {
       <meta name="title" content="Clingon CLI - Docs & Blog" />
       <meta
         name="description"
-        content="Create resources for your project with just a few steps, components, pages, functions, and more"
+        content="Create resources for your project with just a few steps, components, pages, functions, and more. Increase your daily Developer Experience."
       />
       <meta
         name="keywords"
-        content="generator, frontend, clingon, react, vue, developertools, devexp, developerexperience, clitool, toolgenerator, nodejs, vitest, testinglibrary, functions, more, components, pages, resources"
+        content="developerexperience, functions, components, pages, resources, project, daily"
       />
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="robots" content="index, follow" />
