@@ -8,10 +8,10 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/ipetinate/clingon'
   },
-  chat: {
-    link: 'https://github.com/ipetinate/clingon/discussions',
-    icon: <DiscussionIcon />
-  },
+  // chat: {
+  //   link: 'https://github.com/ipetinate/clingon/discussions',
+  //   icon: <DiscussionIcon />
+  // },
   head: (
     <>
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
