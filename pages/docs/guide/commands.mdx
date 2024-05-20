@@ -187,3 +187,31 @@ You can create shortcuts using NPM scripts to execute clingon commands, if you d
         ```
 
         <img src="/images/with-npm-scripts.png" alt="Create with NPM Scripts" className="rounded-xl pointer-events-none" />
+
+## `init` command
+
+To use Clingon in an advanced way you need to initialize the tool, this will create some example and configuration files.
+
+### Usage
+
+```shell
+clingon init
+
+clingon init --e
+
+# or
+
+npx clingon@latest init
+
+npx clingon@latest init --examples
+```
+
+### Arguments
+
+This command has no arguments
+
+#### Options
+
+| Option           | Description                         | Default Value | Required |
+| ---------------- | ----------------------------------- | ------------- | -------- |
+| `-e, --examples` | Generate files with example content | `false`       | No       |
