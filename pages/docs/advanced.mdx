@@ -1,0 +1,273 @@
+import { FileTree } from 'nextra/components'
+
+# Advanced Mode
+
+> The Clingon tool offers some modes of use, from the simplest and most verbose where you just say what you want and it gives it to you, to the most advanced where you take control and it just executes it.
+
+Welcome to advanced mode, now you are in control of your templates, which allows you to use Clingon to generate whatever you want, whether it be frontend components, node files, Markdown documentation, or anything you need, Advanced mode is agnostic, no matter the extension, file type or creation target, by creating your meta file, you can pass the template in the format you want. Understand better below:
+
+The advanced mode consists of reading a meta file that will be created within the `.clingon/templates` folder, this file can be created in JSON or YAML format (we recommend the YAML format as it is easier to read, but if you prefer JSON , you just can).
+
+## Introduction
+
+To get started, I recommend that you initialize the tool in your project, run the `init` command
+
+```shell
+npx clingon init
+```
+
+After it boots, some files and folders will be created, which are as follows:
+
+<FileTree>
+    <FileTree.Folder name=".clingon" defaultOpen>
+        <FileTree.Folder name="presets" />
+        <FileTree.Folder name="templates" defaultOpen>
+            <FileTree.File name="meta.yaml" />
+            <FileTree.File name="README.md" />
+        </FileTree.Folder>
+    </FileTree.Folder>
+
+    <FileTree.File name="clingon.config.json" />
+
+</FileTree>
+
+To make it clearer, the `init` command creates the `.clingon` folder that will store your `presets` (saved by the `gen` command), and your `templates` that will be used for this presented mode, along with the files meta and README.
+
+## Meta file
+
+This file is very important, it is a declarative language of what resources you have in your template, as well as how and where things should be created.
+
+As previously stated, you can use YAML or JSON, the tool accepts either format.
+
+The meta file has a very simple structure, basically you identify the template (so that you can later indicate it in the `scaffold` command) and pass the path to be created and the path of the customized template. If you want to create a component or a compound file, you have additional options of `test`, `style` and `story`, despite being an analogy to frontend technologies, the advanced mode accepts any file, just omit these objects if you don't need it.
+
+Basic meta file interface:
+
+```ts
+interface Meta {
+  /**
+   * Template id, used as value on `--template` flag (required)
+   */
+  identifier: string
+  /**
+   * Set as true if you want to add resource inside a folder with same name (optional)
+   *
+   * Examples:
+   *    - If `true`: `path/MyResource/MyResource.extension
+   *    - If `false`: `path/MyResource.extension
+   */
+  folderWrapper?: boolean
+  /**
+   * Resource file setup (required)
+   */
+  resource: ResourceCommomShape
+  /**
+   * Test file setup (optional)
+   */
+  test?: ResourceCommomShape
+  /**
+   * Style file setup (optional)
+   */
+  style?: ResourceCommomShape
+  /**
+   * Story file setup (optional)
+   */
+  story?: ResourceCommomShape
+}
+
+interface ResourceCommomShape {
+  /**
+   * Target path, where resource will be created
+   */
+  path: string
+  /**
+   * Custom template path (from `.clingon/templates/<template-path>`)
+   */
+  template: string
+}
+```
+
+The meta file in YAML or JSON accepts a list of the Meta interface, so you can pass multiple sets of templates. As in the following example:
+
+```yaml showLineNumbers filename="meta.yaml"
+- identifier: component
+  folderWrapper: true
+  resource:
+    path: 'src/components'
+    template: './component/Component.tsx'
+  test:
+    path: 'src/components'
+    template: './component/Component.test.tsx'
+  story:
+    path: 'src/components'
+    template: './component/Component.stories.tsx'
+  style:
+    path: 'src/components'
+    template: './component/Component.styles.css'
+
+- identifier: async-function
+  resource:
+    path: src/utils
+    template: './functions/AsyncFunction.ts'
+  test:
+    path: src/utils
+    template: './functions/AsyncFunction.spec.ts'
+```
+
+```json showLineNumbers filename="meta.json"
+[
+  {
+    "identifier": "component",
+    "folderWrapper": true,
+    "resource": {
+      "path": "src/components",
+      "template": "./component/Component.tsx"
+    },
+    "test": {
+      "path": "src/components",
+      "template": "./component/Component.test.tsx"
+    },
+    "story": {
+      "path": "src/components",
+      "template": "./component/Component.stories.tsx"
+    },
+    "style": {
+      "path": "src/components",
+      "template": "./component/Component.styles.css"
+    }
+  },
+  {
+    "identifier": "async-function",
+    "resource": {
+      "path": "src/utils",
+      "template": "./functions/AsyncFunction.ts"
+    },
+    "test": {
+      "path": "src/utils",
+      "template": "./functions/AsyncFunction.spec.ts"
+    }
+  }
+]
+```
+
+If you just want one set, keep the structure as an array (to avoid errors when reading the data) and add your set:
+
+```yaml showLineNumbers filename="meta.yaml"
+- identifier: function
+  resource:
+    path: src/utils
+    template: './functions/function.ts'
+  test:
+    path: src/utils
+    template: './functions/function.spec.ts'
+```
+
+```json showLineNumbers filename="meta.json"
+[
+  {
+    "identifier": "function",
+    "resource": {
+      "path": "src/utils",
+      "template": "./functions/function.ts"
+    },
+    "test": {
+      "path": "src/utils",
+      "template": "./functions/function.spec.ts"
+    }
+  }
+]
+```
+
+## Custom templates
+
+Custom templates must be created within the `.clingon/templates` folder, and the structure is free, create as you wish, but have common sense to maintain a structure that is simple to maintain, and that is not confusing to understand.
+
+As a suggestion, I say that you can create folders similar to those in your project, which will be intuitive for those who work with the project, let's look at the following examples:
+
+- I want to create frontend templates, for components, tests and stories, my project uses React, Storybook and Vitest.
+
+Suggested structure:
+
+<FileTree>
+  <FileTree.Folder name=".clingon" defaultOpen>
+        <FileTree.Folder name="templates" defaultOpen>
+            <FileTree.Folder name="components" defaultOpen>
+                <FileTree.Folder name="React" defaultOpen>
+                    <FileTree.File name="Component.tsx" />
+                    <FileTree.File name="Component.spec.tsx" />
+                    <FileTree.File name="Component.stories.tsx" />
+                    <FileTree.File name="Component.style.css" />
+                </FileTree.Folder>
+            </FileTree.Folder>
+
+            <FileTree.File name="meta.yaml" />
+            <FileTree.File name="README.md" />
+        </FileTree.Folder>
+    </FileTree.Folder>
+
+</FileTree>
+
+And your meta file should look like this:
+
+```yaml filename="meta.yaml"
+- identifier: react-component
+  folderWrapper: true
+  resource:
+    path: 'src/components'
+    template: './component/React/Component.tsx'
+  test:
+    path: 'src/components'
+    template: './component/React/Component.spec.tsx'
+  story:
+    path: 'src/components'
+    template: './component/React/Component.stories.tsx'
+  style:
+    path: 'src/components'
+    template: './component/React/Component.styles.css'
+```
+
+    - **Note**: When you have components with many files together, you can use `folderWrapper` to group them into a single folder with the name of the component, or if you have a structure where the component, test, stories, etc., are in different folders, use the `path` to indicate where it should be created.
+
+## Template path
+
+The template path in the meta file should be considered as follows, the path starts from the `.clingon/templates` folder, so use `./` + `path` in the `path` key of the resource. Let's consider the meta file above (at the end of the previous section) as an example:
+
+- Your customized template is at `.clingon/templates/components/React`:
+
+<FileTree>
+  <FileTree.Folder name=".clingon" defaultOpen>
+    <FileTree.Folder name="templates" defaultOpen>
+      <FileTree.Folder name="components" defaultOpen>
+        <FileTree.Folder name="React" defaultOpen>
+          <FileTree.File name="Component.tsx" />
+          <FileTree.File name="Component.spec.tsx" />
+          <FileTree.File name="Component.stories.tsx" />
+          <FileTree.File name="Component.style.css" />
+        </FileTree.Folder>
+      </FileTree.Folder>
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+- Your meta file must have the path like this:
+
+```yaml filename="meta.yaml" {5,8,11,14}
+- identifier: react-component
+  folderWrapper: true
+  resource:
+    path: 'src/components'
+    template: './component/React/Component.tsx'
+  test:
+    path: 'src/components'
+    template: './component/React/Component.spec.tsx'
+  story:
+    path: 'src/components'
+    template: './component/React/Component.stories.tsx'
+  style:
+    path: 'src/components'
+    template: './component/React/Component.styles.css'
+```
+
+## How to use
+
+> Under construction

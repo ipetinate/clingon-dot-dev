@@ -28,5 +28,11 @@
     "theme": {
       "timestamp": false
     }
+  },
+  "advanced": {
+    "title": "Advanced",
+    "theme": {
+      "timestamp": false
+    }
   }
 }

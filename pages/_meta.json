@@ -9,6 +9,7 @@
   },
   "docs": {
     "title": "Documentation",
+    "href": "/docs",
     "type": "page",
     "theme": {
       "timestamp": false
