@@ -45,14 +45,14 @@ const config: DocsThemeConfig = {
     </>
   ),
   docsRepositoryBase: 'https://github.com/ipetinate/clingon',
-  // banner: {
-  //   key: '1.0.0',
-  //   text: (
-  //     <a href="https://clingon.dev/releases" target="_blank">
-  //       🎉 🖖 Clingon 1.0 is released. Read more →
-  //     </a>
-  //   )
-  // },
+  banner: {
+    key: '1.0.0',
+    text: (
+      <a href="https://clingon.dev/releases" target="_blank">
+        🎉 🖖 Clingon 1.0 is released. Read more →
+      </a>
+    )
+  },
   footer: {
     text: `${new Date().getFullYear()} © Isac Petinate`
   },
