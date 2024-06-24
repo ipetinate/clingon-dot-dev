@@ -48,7 +48,7 @@ const config: DocsThemeConfig = {
   banner: {
     key: '1.0.0',
     text: (
-      <a href="https://clingon.dev/releases" target="_blank">
+      <a href="https://clingon.dev/docs/releases" target="_blank">
         🎉 🖖 Clingon 1.0 is released. Read more →
       </a>
     )
