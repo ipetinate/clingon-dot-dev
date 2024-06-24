@@ -30,7 +30,7 @@
     }
   },
   "advanced": {
-    "title": "Advanced",
+    "title": "Custom templates (Advanced)",
     "theme": {
       "timestamp": false
     }
