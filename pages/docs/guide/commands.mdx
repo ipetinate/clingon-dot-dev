@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 # Commands
 
 Commands are ways of interacting with the CLI tool, each command will perform an action, resulting in different outputs, for now we only have one command, but as the tool evolves, new commands will be added
@@ -215,3 +217,25 @@ This command has no arguments
 | Option           | Description                         | Default Value | Required |
 | ---------------- | ----------------------------------- | ------------- | -------- |
 | `-e, --examples` | Generate files with example content | `false`       | No       |
+
+## `scaffold` command
+
+Advanced mode command, with this command you can generate your files with local templates, instead opinionated built-in templates from clingon `gen` and `create` command.
+
+To learn more about this command, see this complete doc: <Link href="/docs/advanced">Custom templates (Advanced)</Link>
+
+### Usage
+
+```shell
+npx clingon@latest scaffold ResourceName --template templateIdentifier
+```
+
+### Arguments
+
+- `<name>`: Name of the resource to be created (required).
+
+#### Options
+
+| Option           | Description                                                 | Default Value | Required |
+| ---------------- | ----------------------------------------------------------- | ------------- | -------- |
+| `-t, --template` | Template identifier, from `identifier` key inside meta file | none          | Yes      |
