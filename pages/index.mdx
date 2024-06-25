@@ -1,11 +1,14 @@
 import { Bleed } from 'nextra-theme-docs'
 import { Callout } from 'nextra/components'
 import { HomeCards } from 'components/HomeCards'
+import { FeaturePanel } from 'components/FeaturePanel'
+import { ExpandableImage } from 'components/ExpandableImage'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 <div className="w-full flex flex-col justify-center items-center content-center">
-  <img src="/logo.svg" alt="Clingon logo" className="w-80 h-80" />
+  <Image width={280} height={280} src="/logo.svg" alt="Clingon logo" className="w-80 h-80" />
 </div>
 
 <div className="w-full flex flex-col justify-center items-center content-center">
@@ -25,4 +28,108 @@ import Link from 'next/link'
 
 <Bleed>
   <HomeCards />
+</Bleed>
+
+<Bleed>
+  <div className='flex flex-col w-full gap-32'>
+    <FeaturePanel
+      banner={
+        <ExpandableImage width={512} height={256} src='/images/init-command-result.png' className='rounded-md' />
+      }
+      content={
+        <div className="h-full w-full flex flex-col items-start px-6">
+          <p className='font-semibold text-3xl'>Launch the tool easily</p>
+
+          <p className='text-sm pt-4'>
+            With the `init` command you can easily initialize all necessary files and folders, with or without examples. If you choose examples, a readme file will be generated to guide use and some ready-to-use files.
+          </p>
+
+          <p className='text-sm pt-5'><strong>Difficulty level</strong>: Advanced</p>
+
+          <span className='text-sm'>
+            <strong>Recommended</strong>: All kind of users
+          </span>
+          <span className='text-sm'>
+            <strong>Objective</strong>: Help configure the tool and provide examples
+          </span>
+        </div>
+      }
+    />
+
+    <FeaturePanel
+      reverse
+      banner={
+        <ExpandableImage width={512} height={256} src='/images/preset-empty.png' className='rounded-md' />
+      }
+      content={
+        <div className="h-full w-full flex flex-col items-start px-6">
+          <p className='font-semibold text-3xl'>Generate commands with prompts</p>
+
+          <p className='text-sm pt-4'>With the generation mode, you don't need to know many details about the necessary code, just say what you need and we will deliver something minimally ready to be executed, the rest is up to you.</p>
+
+          <p className='text-sm pt-5'><strong>Difficulty level</strong>: Easy</p>
+
+          <span className='text-sm'>
+            <strong>Recommended</strong>: Beginners or those who don't know exactly the framework code
+          </span>
+          <span className='text-sm'>
+            <strong>Objective</strong>: quick creation of files with a ready and connected structure
+          </span>
+        </div>
+      }
+    />
+
+    <FeaturePanel
+      banner={
+        <ExpandableImage width={512} height={256} src='/images/preset-folder-file.png' className='rounded-md' />
+      }
+      content={
+        <div className="h-full w-full flex flex-col items-start px-6">
+          <p className='font-semibold text-3xl'>Save your prompt answers</p>
+
+          <p className='text-sm pt-4'>
+            The creation mode via presets allows you to save your responses and quickly use them to create new resources. Once you have defined a response pattern, you can easily reuse it.
+          </p>
+
+          <p className='text-sm pt-5'>
+            <strong>Difficulty level</strong>: Beginner and Intermediate
+          </p>
+
+          <span className='text-sm'>
+            <strong>Recommended</strong>: Any type of user who wants to save time and not worry about implementing files
+          </span>
+          <span className='text-sm'>
+            <strong>Objective</strong>: quick creation of files with a ready and connected structure, with just a few steps
+          </span>
+        </div>
+      }
+    />
+
+    <FeaturePanel
+      reverse
+      banner={
+        <ExpandableImage width={512} height={256} src='/images/scaffold-custom-templates.png' className='rounded-md' />
+      }
+      content={
+        <div className="h-full w-full flex flex-col items-start px-6">
+          <p className='font-semibold text-3xl'>Use custom local templates (Advanced)</p>
+
+          <p className='text-sm pt-4'>
+            Allows the creation of customized local templates, ensuring more flexibility in use, in addition to allowing the use of proprietary code without worrying about security. Ideal for those who have internal frameworks/libs, Design Systems, etc.
+          </p>
+
+          <p className='text-sm pt-5'><strong>Difficulty level</strong>: Easy</p>
+
+          <span className='text-sm'>
+            <strong>Recommended</strong>: Experienced, who want to create their own templates or with proprietary code
+          </span>
+          <span className='text-sm'>
+            <strong>Objective</strong>: More flexibility and customization
+          </span>
+        </div>
+      }
+    />
+
+  </div>
+
 </Bleed>
