@@ -25,7 +25,7 @@ export function ExpandableImage({ src, alt, width, height }: ExpandableImageProp
         alt={alt}
         width={width}
         height={height}
-        className="cursor-pointer"
+        className="cursor-pointer rounded-md"
       />
 
       {isOpen && (
